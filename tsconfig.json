@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "composite": true,
+    "target": "ESNext",
+    "useDefineForClassFields": true,
+    "module": "ESNext",
+    "lib": ["ESNEXT", "DOM", "DOM.Iterable"],
+    "skipLibCheck": true,
+    "paths": {
+      "@": ["src"],
+      "@/*": [
+        "src/*"
+      ]
+    },
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "esModuleInterop": true,
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "moduleDetection": "force",
+    "noEmit": true,
+    "jsx": "preserve",
+
+    /* Linting */
+    "strict": true,
+    "noImplicitAny": false,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedSideEffectImports": false
+  },
+  "include": ["src/**/*", "src/**/*.vue", "src/**/*.ts", "src/**/*.js", "src/**/*.d.ts", "vite.config.ts", "tailwind.config.ts", "auto-imports.d.ts", "global.d.ts"],
+  "exclude": ["node_modules"]
+}

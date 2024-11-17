@@ -1,0 +1,24 @@
+@layer tailwind-base, primevue, tailwind-utilities;
+
+@layer tailwind-base {
+  @tailwind base;
+
+  @layer base {
+    html {
+      @apply font-sans h-full overflow-y-scroll;
+    }
+
+    body {
+      @apply h-screen max-w-full w-full;
+    }
+
+    #app {
+      @apply min-h-screen flex flex-col flex-1 max-w-full;
+    }
+  }
+}
+
+@layer tailwind-utilities {
+  @tailwind components;
+  @tailwind utilities;
+}
