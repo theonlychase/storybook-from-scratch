@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import type { RouteRecordRaw } from 'vue-router';
+  import type { RouteRecordRaw, RouteRecordNameGeneric } from 'vue-router';
   const route = useRoute();
 
   const {
@@ -8,11 +8,11 @@
     path = '',
   } = defineProps<{
     children?: Array<RouteRecordRaw>;
-    name?: string;
+    name?: RouteRecordNameGeneric;
     path?: string;
   }>();
 
-  const closeSidebar = inject('closeSidebar');
+  const closeSidebar = inject<() => void>('closeSidebar');
   const isOpen = ref(false);
 
   watch(
@@ -32,7 +32,7 @@
       type="button"
       :class="isOpen ? 'bg-gray-200 text-gray-900' : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'"
       class="bg-gray-50 group w-full flex items-center px-2 py-2 text-left text-sm font-medium rounded-md focus:outline-none"
-      :aria-controls="`sub-menu-${name}`"
+      :aria-controls="`sub-menu-${String(name)}`"
       :aria-expanded="isOpen"
       @click="children.length ? (isOpen = !isOpen) : null"
     >
@@ -64,7 +64,7 @@
         class="group w-full flex items-center pl-10 pr-2 py-2 text-sm font-medium rounded-md"
         @click="closeSidebar"
       >
-        {{ child.meta.name }}
+        {{ child.meta?.name }}
       </button>
     </router-link>
   </div>
