@@ -13,7 +13,7 @@
       default: false,
     },
     tabs: {
-      type: Array,
+      type: Array<string>,
       required: true,
     },
     value: {
@@ -29,7 +29,10 @@
 </script>
 
 <template>
-  <div class="WcTabs bg-white flex-auto w-full" :class="{ flex: vertical }">
+  <div
+    class="WcTabs bg-white flex-auto w-full"
+    :class="{ flex: vertical }"
+  >
     <div
       class="WcTabs-header flex relative"
       :class="{ 'flex-col mb-0 flex-grow-0 flex-shrink': vertical }"
@@ -59,7 +62,10 @@
         'flex-grow flex-shrink-0': vertical,
       }"
     >
-      <slot :name="value" :tab="value" />
+      <slot
+        :name="value"
+        :tab="value"
+      />
     </div>
   </div>
 </template>

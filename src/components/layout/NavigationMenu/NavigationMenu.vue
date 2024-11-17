@@ -9,7 +9,7 @@
     ?.filter((item) => item.meta.parent && item.children.length)
     .map((parent) => {
       // @ts-expect-error - name property in meta
-      parent.children.sort((a: any, b: any) => (b.meta.name === 'Default') - (a.meta.name === 'Default'));
+      parent.children.sort((a: never, b: never) => (b.meta.name === 'Default') - (a.meta.name === 'Default'));
       return parent;
     });
 </script>
