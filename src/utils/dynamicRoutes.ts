@@ -27,14 +27,18 @@ function removeQueryParams(to: RouteLocationNormalized) {
 }
 
 export default function dynamicRoutes({ components, stories, pages }, app, router) {
+  // TODO - Fix issue with child components being added as parents if they include a part of the parent component name
+  const disabledComponents = ['PrimeTab'];
+
   // Global Components and Routes for UI and Stories
   Object.entries(components).forEach(([path, component]) => {
     const { componentName: parent, routePath } = getComponentPath(path);
 
     const children: Array<RouteMeta> = [];
     Object.entries(stories).forEach(([storyPath, story]) => {
-      if (storyPath.includes(parent)) {
+      if (storyPath.includes(parent) && !disabledComponents.includes(parent)) {
         const { componentName, name, routePath: variation } = getComponentPath(storyPath);
+
         const storyName = name.replaceAll('-', ' ');
 
         children.push({

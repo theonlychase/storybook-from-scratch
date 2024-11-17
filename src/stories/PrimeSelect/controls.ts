@@ -11,7 +11,7 @@ export default {
     name: 'disabled',
     type: 'toggle',
     props: {
-      value: false,
+      modelValue: false,
     },
     description: 'When present, it specifies that the component should be disabled.',
   },
@@ -19,7 +19,7 @@ export default {
     name: 'fluid',
     type: 'toggle',
     props: {
-      value: false,
+      modelValue: false,
     },
     description: 'Spans 100% width of the container when enabled.',
   },
@@ -27,7 +27,7 @@ export default {
     name: 'invalid',
     type: 'toggle',
     props: {
-      value: false,
+      modelValue: false,
     },
     description: 'When present, it specifies that the component should have invalid state style.',
   },
@@ -43,7 +43,7 @@ export default {
     name: 'loading',
     type: 'toggle',
     props: {
-      value: false,
+      modelValue: false,
     },
     description: 'Whether the select is in loading state.',
   },
@@ -59,7 +59,7 @@ export default {
     name: 'showClear',
     type: 'toggle',
     props: {
-      value: false,
+      modelValue: false,
     },
     description: 'When enabled, a clear icon is displayed to clear the value.',
   },
@@ -67,7 +67,7 @@ export default {
     name: 'size',
     type: 'select',
     props: {
-      value: undefined,
+      modelValue: undefined,
       options: ['small', 'large'],
       placeholder: 'Select a size',
     },
