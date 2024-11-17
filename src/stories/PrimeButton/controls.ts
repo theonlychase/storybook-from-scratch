@@ -28,7 +28,7 @@ export default {
     name: 'disabled',
     type: 'toggle',
     props: {
-      value: false,
+      modelValue: false,
     },
     description: 'Button will be disabled',
   },
@@ -36,7 +36,7 @@ export default {
     name: 'fluid',
     type: 'toggle',
     props: {
-      value: false,
+      modelValue: false,
     },
     description: 'Spans 100% width of the container when enabled.',
   },
@@ -69,7 +69,7 @@ export default {
     name: 'link',
     type: 'toggle',
     props: {
-      value: false,
+      modelValue: false,
     },
     description: 'Add a link style to the button',
   },
@@ -77,7 +77,7 @@ export default {
     name: 'loading',
     type: 'toggle',
     props: {
-      value: false,
+      modelValue: false,
     },
     description: 'Button loading state',
   },
@@ -85,7 +85,7 @@ export default {
     name: 'outlined',
     type: 'toggle',
     props: {
-      value: false,
+      modelValue: false,
     },
     description: 'Add a border class without a background initially.',
   },
@@ -93,7 +93,7 @@ export default {
     name: 'raised',
     type: 'toggle',
     props: {
-      value: false,
+      modelValue: false,
     },
     description: 'Button will display a shadow to indicate elevation',
   },
@@ -101,7 +101,7 @@ export default {
     name: 'rounded',
     type: 'toggle',
     props: {
-      value: false,
+      modelValue: false,
     },
     description: 'Button will become rounded',
   },
@@ -109,7 +109,7 @@ export default {
     name: 'size',
     type: 'select',
     props: {
-      value: undefined,
+      modelValue: undefined,
       options: ['small', 'large'],
       placeholder: 'Select a size',
     },
@@ -129,7 +129,7 @@ export default {
     name: 'variant',
     type: 'select',
     props: {
-      value: undefined,
+      modelValue: undefined,
       options: ['text', 'outlined', 'link'],
       placeholder: 'Select a variant',
     },

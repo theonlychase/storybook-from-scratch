@@ -8,3 +8,8 @@ export { default as PrimeButton } from './ui/PrimeButton/PrimeButton.vue';
 export { default as PrimeInputText } from './ui/PrimeInputText/PrimeInputText.vue';
 export { default as PrimeSelect } from './ui/PrimeSelect/PrimeSelect.vue';
 export { default as PrimeToggleSwitch } from './ui/PrimeToggleSwitch/PrimeToggleSwitch.vue';
+export { default as PrimeTabs } from './ui/PrimeTabs/PrimeTabs.vue';
+export { default as PrimeTab } from './ui/PrimeTabs/PrimeTabs.vue';
+export { default as PrimeTabPanels } from './ui/PrimeTabs/PrimeTabPanels.vue';
+export { default as PrimeTabPanel } from './ui/PrimeTabs/PrimeTabPanel.vue';
+export { default as PrimeTabList } from './ui/PrimeTabs/PrimeTabList.vue';

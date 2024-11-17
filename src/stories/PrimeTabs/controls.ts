@@ -7,13 +7,13 @@ export const defaultControls = {
     },
     description: 'When enabled, hidden tabs are not rendered at all. Defaults to false that hides tabs with css.',
   },
-  multiple: {
-    name: 'multiple',
+  scrollable: {
+    name: 'scrollable',
     type: 'toggle',
     props: {
       modelValue: false,
     },
-    description: 'When enabled, multiple tabs can be activated at the same time.',
+    description: 'When specified, enables horizontal and/or vertical scrolling.',
   },
   selectOnFocus: {
     name: 'selectOnFocus',
@@ -23,13 +23,21 @@ export const defaultControls = {
     },
     description: 'When enabled, the focused tab is activated.',
   },
+  showNavigators: {
+    name: 'showNavigators',
+    type: 'toggle',
+    props: {
+      modelValue: true,
+    },
+    description: 'Whether to display navigation buttons in container when scrollable is enabled.',
+  },
   value: {
     name: 'value',
     type: 'text',
     props: {
-      value: null,
+      value: '0',
     },
-    description: 'Value of the active panel or an array of values in multiple mode.',
+    description: 'Value of the active tab.',
   },
 };
 
@@ -46,7 +54,7 @@ export const accordionPanelControls = {
     name: 'asChild',
     type: '',
     props: {
-      modelValue: false,
+      value: false,
     },
     description: 'When enabled, it changes the default rendered element for the one passed as a child element.',
   },
@@ -54,7 +62,7 @@ export const accordionPanelControls = {
     name: 'disabled',
     type: '',
     props: {
-      modelValue: false,
+      value: false,
     },
     description: 'Whether the item is disabled.',
   },
