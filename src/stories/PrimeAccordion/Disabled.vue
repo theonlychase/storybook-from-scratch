@@ -14,7 +14,7 @@
 </script>
 
 <template>
-  <PrimeAccordion v-bind="defaultProps">
+  <PrimeAccordion>
     <PrimeAccordionPanel value="0">
       <PrimeAccordionHeader>Header I</PrimeAccordionHeader>
       <PrimeAccordionContent>
@@ -33,7 +33,7 @@
     </PrimeAccordionPanel>
     <PrimeAccordionPanel
       value="2"
-      disabled
+      :disabled="Boolean($route.query?.disabled)"
     >
       <PrimeAccordionHeader>Header III</PrimeAccordionHeader>
       <PrimeAccordionContent>

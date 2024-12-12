@@ -4,6 +4,10 @@
       type: Boolean,
       default: false,
     },
+    contentClass: {
+      type: String,
+      default: '',
+    },
     contentPadding: {
       type: Boolean,
       default: false,
@@ -60,6 +64,7 @@
         'overflow-x-auto': overflowContent,
         'p-6': contentPadding,
         'flex-grow flex-shrink-0': vertical,
+        [`${contentClass}`]: contentClass,
       }"
     >
       <slot

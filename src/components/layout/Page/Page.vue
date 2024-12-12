@@ -18,12 +18,14 @@
         {{ meta.description }}
       </div>
     </div>
-    <div class="px-4 sm:px-6 md:px-8 max-w-7xl">
+
+    <div class="px-4 sm:px-6 md:px-8 max-w-7xl flex-1">
       <div class="py-4 mb-16">
         <slot name="page" />
         <slot name="story" />
       </div>
     </div>
+
     <controls-panel v-if="!$route.meta.static" />
   </main>
 </template>
