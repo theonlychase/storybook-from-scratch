@@ -33,7 +33,7 @@
     </PrimeAccordionPanel>
     <PrimeAccordionPanel
       value="2"
-      :disabled="Boolean($route.query?.disabled)"
+      :disabled="Boolean($route.query?.disabled ?? true)"
     >
       <PrimeAccordionHeader>Header III</PrimeAccordionHeader>
       <PrimeAccordionContent>

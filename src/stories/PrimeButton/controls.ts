@@ -130,7 +130,7 @@ export default {
     type: 'select',
     props: {
       modelValue: undefined,
-      options: ['text', 'outlined', 'link'],
+      options: ['none', 'text', 'outlined', 'link'],
       placeholder: 'Select a variant',
     },
     description: 'Button variants are: <span class="font-bold">text, outlined, link</span>',

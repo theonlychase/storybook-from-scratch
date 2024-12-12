@@ -54,7 +54,7 @@ export const accordionPanelControls = {
     name: 'disabled',
     type: 'toggle',
     props: {
-      modelValue: false,
+      modelValue: true,
     },
     description: 'Whether the item is disabled.',
   },
