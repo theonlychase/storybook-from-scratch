@@ -4,9 +4,11 @@
 </script>
 
 <template>
+  <div class="mb-4">Custom, lightweight alternative to Storybook for building Vue components in isolation.</div>
+
   <ul class="space-y-2 list-disc list-inside">
     <li>Auto generated routes for pages, components & stories</li>
-    <li>Reactive, auto generated controls from component props</li>
+    <li>Reactive, auto generated controls for modifying component state</li>
     <li>Built with Vue3, Vite, & Vue Router 4</li>
     <li>
       Custom UI Components built with
