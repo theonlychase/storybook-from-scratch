@@ -52,7 +52,7 @@ export const accordionPanelControls = {
   },
   disabled: {
     name: 'disabled',
-    type: '',
+    type: 'toggle',
     props: {
       modelValue: false,
     },

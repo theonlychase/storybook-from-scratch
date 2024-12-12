@@ -1,5 +1,7 @@
 <script setup lang="ts">
   import type { Ref } from 'vue';
+  // TODO - disable resize height if less than viewport height
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   import { resizePanel, setControls, setComponents, tabs, updateQuery } from './composables';
 
   const router = useRouter();
@@ -8,19 +10,19 @@
 
   const panel = ref(null);
   const activeTab = ref('Controls');
-  const { height } = resizePanel(panel);
+  // const { height } = resizePanel(panel);
   const { controlsState, headers }: { controlsState: { [key: string]: any }; headers: Ref<Array<string>> } = setControls(controls);
 </script>
 
 <template>
   <div
     ref="panel"
-    class="w-full min-h-[200px] bg-white mt-auto shadow relative bg-gray-50 border border-solid border-gray-200"
-    :style="{ height: `${height}${height !== 'auto' ? 'px' : ''}` }"
+    class="w-full h-auto min-h-[200px] mt-auto shadow relative bg-gray-50 border border-solid border-gray-200"
   >
     <div class="absolute top-0 left-0 h-1 w-full cursor-move z-10" />
     <wc-tabs
       v-model:value="activeTab"
+      content-class="max-h-[calc(100vh_-_50vh)]"
       :tabs="tabs"
       overflow-content
     >
@@ -29,7 +31,7 @@
           v-if="tab === 'Controls'"
           class="min-w-full divide-y divide-gray-200"
         >
-          <thead class="bg-gray-100">
+          <thead class="bg-gray-200 sticky top-0 z-10">
             <tr>
               <th
                 v-for="header in headers"
@@ -59,7 +61,7 @@
                   :key="control.name"
                   v-bind="{ ...control.props }"
                   @update:value="(val) => updateQuery({ val, name: control.name }, route, router, controlsState)"
-                  @update:modelValue="(val) => updateQuery({ val, name: control.name }, route, router, controlsState)"
+                  @update:model-value="(val) => updateQuery({ val, name: control.name }, route, router, controlsState)"
                 />
                 <div
                   v-if="!setComponents(control.type)"

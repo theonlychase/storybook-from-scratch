@@ -6,5 +6,8 @@
 </script>
 
 <template>
-  <wc-icon v-bind="defaultProps" fill="white" />
+  <wc-icon
+    v-bind="defaultProps"
+    fill="white"
+  />
 </template>
