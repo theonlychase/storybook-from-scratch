@@ -6,7 +6,7 @@
   const closeSidebar = inject<() => void>('closeSidebar');
 
   // @ts-expect-error: model prop type is incorrect.
-  const parentItems: any = computed(() => {
+  const parentItems: never = computed(() => {
     const items =
       navItems
         ?.filter((item) => item.meta.parent && item.children.length)
