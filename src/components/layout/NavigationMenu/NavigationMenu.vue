@@ -5,7 +5,8 @@
   const navItems = inject<RouteRecord[]>('nav-items');
   const closeSidebar = inject<() => void>('closeSidebar');
 
-  const parentItems = computed(() => {
+  // @ts-expect-error: model prop type is incorrect.
+  const parentItems: any = computed(() => {
     const items =
       navItems
         ?.filter((item) => item.meta.parent && item.children.length)
