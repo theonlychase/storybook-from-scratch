@@ -5,7 +5,8 @@
 
   const defaultProps = setDefaultControls({
     controls,
-    title: 'Default Select',
+    title: 'Default InputText',
+    description: 'InputText is an extension to standard input element with theming.',
   });
 </script>
 

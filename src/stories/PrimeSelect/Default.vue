@@ -6,6 +6,7 @@
   const defaultProps = setDefaultControls({
     controls,
     title: 'Default Select',
+    description: 'Select is used to choose an item from a collection of options.',
   });
   const options = ['Option 1', 'Option 2', 'Option 3', 'Option 4'];
 </script>

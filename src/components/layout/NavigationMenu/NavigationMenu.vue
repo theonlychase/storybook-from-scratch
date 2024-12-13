@@ -1,17 +1,40 @@
 <script setup lang="ts">
   import { type RouteRecord } from 'vue-router';
-  import NavigationMenuItem from '@/components/layout/NavigationMenuItem/NavigationMenuItem.vue';
+  import PanelMenu from 'primevue/panelmenu';
 
   const navItems = inject<RouteRecord[]>('nav-items');
   const closeSidebar = inject<() => void>('closeSidebar');
 
-  const parentItems = navItems
-    ?.filter((item) => item.meta.parent && item.children.length)
-    .map((parent) => {
-      // @ts-expect-error - name property in meta
-      parent.children.sort((a: never, b: never) => (b.meta.name === 'Default') - (a.meta.name === 'Default'));
-      return parent;
+  const parentItems = computed(() => {
+    const items =
+      navItems
+        ?.filter((item) => item.meta.parent && item.children.length)
+        .map((parent) => {
+          // @ts-expect-error - name property in meta
+          parent.children.sort((a: never, b: never) => (b.meta.name === 'Default') - (a.meta.name === 'Default'));
+          return parent;
+        }) ?? [];
+
+    return items.map((item) => {
+      const parent = {
+        label: item.name,
+        parent: true,
+        route: { name: item.name },
+      };
+
+      if (!item.children.length) {
+        return parent;
+      }
+
+      return {
+        ...parent,
+        items: item.children.map((child) => ({
+          label: child?.meta?.name,
+          route: { name: child.name },
+        })),
+      };
     });
+  });
 </script>
 
 <template>
@@ -30,16 +53,45 @@
   </div>
   <div class="mt-5 flex-1 h-0 overflow-y-auto">
     <nav
-      class="px-2 space-y-1 bg-gray-50"
+      class="px-2 bg-gray-50"
       aria-label="Sidebar"
     >
-      <NavigationMenuItem
-        v-for="{ name, path, children } in parentItems"
-        :key="name"
-        :children="children"
-        :name="name"
-        :path="path"
-      />
+      <PanelMenu
+        class="navigation-menu"
+        :model="parentItems"
+      >
+        <template #item="{ active, hasSubmenu, item }">
+          <router-link
+            v-slot="{ isActive }"
+            :to="item.route"
+          >
+            <div
+              class="flex items-center gap-x-1.5 text-sm font-medium"
+              :class="{
+                'p-panelmenu-item--active': isActive && !hasSubmenu,
+              }"
+            >
+              <span
+                v-if="hasSubmenu"
+                class="pi pi-angle-right transition-transform"
+                :class="{
+                  'rotate-90': active,
+                }"
+              />
+
+              <span
+                class="pi text-[.65rem]"
+                :class="{
+                  'pi-objects-column': hasSubmenu,
+                  'pi-bookmark': !hasSubmenu,
+                }"
+              />
+
+              {{ item.label }}
+            </div>
+          </router-link>
+        </template>
+      </PanelMenu>
     </nav>
   </div>
 </template>

@@ -10,6 +10,7 @@
   const defaultProps = setDefaultControls({
     controls: defaultControls,
     title: 'Default Accordion',
+    description: 'Accordion groups a collection of contents in panels.',
   });
 </script>
 

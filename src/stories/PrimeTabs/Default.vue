@@ -11,6 +11,7 @@
   const defaultProps = setDefaultControls({
     controls: defaultControls,
     title: 'Default Tabs',
+    description: 'Tabs facilitates seamless switching between different views.',
   });
 </script>
 

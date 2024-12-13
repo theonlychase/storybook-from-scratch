@@ -13,6 +13,7 @@
 
 <template>
   <Sidebar />
+
   <Page>
     <template #page>
       <slot name="page" />
