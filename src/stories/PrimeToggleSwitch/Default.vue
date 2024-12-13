@@ -6,6 +6,7 @@
   const defaultProps = setDefaultControls({
     controls,
     title: 'Default ToggleSwitch',
+    description: 'ToggleSwitch is used to select a boolean value.',
   });
 </script>
 

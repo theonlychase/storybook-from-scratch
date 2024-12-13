@@ -7,9 +7,10 @@
   import PrimeAccordionHeader from '@/components/ui/PrimeAccordion/PrimeAccordionHeader.vue';
   import PrimeAccordionContent from '@/components/ui/PrimeAccordion/PrimeAccordionContent.vue';
 
-  const defaultProps = setDefaultControls({
+  setDefaultControls({
     controls: accordionPanelControls,
     title: 'Disabled AccordionPanel',
+    description: 'Enabling disabled property of an AccordionPanel prevents user interaction.',
   });
 </script>
 

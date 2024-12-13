@@ -22,3 +22,43 @@
   @tailwind components;
   @tailwind utilities;
 }
+
+/* Custom PrimeVue styles */
+
+/* PanelMenu */
+.p-panelmenu.navigation-menu {
+  @apply gap-0;
+
+  & .p-panelmenu-panel {
+    @apply bg-transparent border-none;
+
+    & .p-panelmenu-header:not(.p-disabled) .p-panelmenu-header-content:hover {
+      @apply bg-gray-100;
+    }
+
+    & .p-panelmenu-submenu {
+      padding: 0;
+    }
+
+    & .p-panelmenu-item {
+      @apply pl-8 hover:bg-gray-100;
+
+      &.p-focus > .p-panelmenu-item-content {
+        @apply bg-inherit;
+      }
+
+      &:has(.p-panelmenu-item--active) {
+        @apply bg-gray-200 hover:bg-gray-200;
+
+        &:not(.p-disabled) > .p-panelmenu-item-content:hover {
+          @apply bg-gray-200;
+        }
+      }
+
+      &:not(.p-disabled) > .p-panelmenu-item-content:hover {
+        @apply bg-gray-100;
+      }
+    }
+  }
+}
+

@@ -6,6 +6,7 @@
   const defaultProps = setDefaultControls({
     controls,
     title: 'Default Button',
+    description: 'Button is an extension to standard button element with icons and theming.',
   });
 </script>
 

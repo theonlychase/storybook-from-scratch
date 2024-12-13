@@ -54,6 +54,7 @@ export default function dynamicRoutes({ components, stories, pages }, app, route
       }
     });
 
+    // redirect to first child, which now, should always be default
     const childToRedirect = children.find((child: any) => child.meta.name.toLowerCase() === 'default');
     const redirect = children.length ? { name: childToRedirect ? childToRedirect.name : children[0].name } : parent;
 
