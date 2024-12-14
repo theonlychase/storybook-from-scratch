@@ -9,7 +9,7 @@
   const controls = inject<Ref<Record<any, any>>>('controlState');
 
   const panel = ref(null);
-  const activeTab = ref('Controls');
+  const activeTab = ref('Docs');
   // const { height } = resizePanel(panel);
   const { controlsState, headers }: { controlsState: { [key: string]: any }; headers: Ref<Array<string>> } = setControls(controls);
 </script>
@@ -28,7 +28,7 @@
     >
       <template #[activeTab]="{ tab }">
         <table
-          v-if="tab === 'Controls'"
+          v-if="tab === 'Docs'"
           class="min-w-full divide-y divide-gray-200"
         >
           <thead class="bg-gray-200 sticky top-0 z-10">

@@ -24,13 +24,14 @@
 }
 
 /* Custom PrimeVue styles */
+/* ---------------------- */
 
 /* PanelMenu */
 .p-panelmenu.navigation-menu {
   @apply gap-0;
 
   & .p-panelmenu-panel {
-    @apply bg-transparent border-none;
+    @apply bg-white md:bg-gray-50 border-none p-0;
 
     & .p-panelmenu-header:not(.p-disabled) .p-panelmenu-header-content:hover {
       @apply bg-gray-100;
@@ -41,7 +42,6 @@
     }
 
     & .p-panelmenu-item {
-      @apply pl-8 hover:bg-gray-100;
 
       &.p-focus > .p-panelmenu-item-content {
         @apply bg-inherit;

@@ -58,7 +58,7 @@ const setControls = (controlsState): { controlsState: Controls; headers: Ref<Arr
   return { controlsState, headers };
 };
 
-const tabs = ['Controls'];
+const tabs = ['Docs'];
 
 const panelHeaders = (disabledState) => {
   return ['Name', 'Description', `Control${disabledState ? 's Disabled' : ''}`];
