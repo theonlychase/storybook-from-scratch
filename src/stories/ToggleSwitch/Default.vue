@@ -1,7 +1,7 @@
 <script setup lang="ts">
   import controls from './controls';
   import { setDefaultControls } from '@/utils/stories';
-  import PrimeToggleSwitch from '@/components/ui/PrimeToggleSwitch/PrimeToggleSwitch.vue';
+  import ToggleSwitch from '@/components/ui/ToggleSwitch/ToggleSwitch.vue';
 
   const defaultProps = setDefaultControls({
     controls,
@@ -11,5 +11,5 @@
 </script>
 
 <template>
-  <PrimeToggleSwitch v-bind="defaultProps" />
+  <ToggleSwitch v-bind="defaultProps" />
 </template>

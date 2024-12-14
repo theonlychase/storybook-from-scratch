@@ -1,7 +1,7 @@
 <script setup lang="ts">
   import controls from './controls';
   import { setDefaultControls } from '@/utils/stories';
-  import PrimeButton from '@/components/ui/PrimeButton/PrimeButton.vue';
+  import Button from '@/components/ui/Button/Button.vue';
 
   const defaultProps = setDefaultControls({
     controls,
@@ -11,5 +11,5 @@
 </script>
 
 <template>
-  <PrimeButton v-bind="defaultProps" />
+  <Button v-bind="defaultProps" />
 </template>

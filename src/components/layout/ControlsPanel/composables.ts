@@ -1,9 +1,9 @@
 import type { Controls } from '@/types/global.ts';
 
 const components = {
-  PrimeSelect: defineAsyncComponent(() => import('@/components/ui/PrimeSelect/PrimeSelect.vue')),
-  PrimeInputText: defineAsyncComponent(() => import('@/components/ui/PrimeInputText/PrimeInputText.vue')),
-  PrimeToggleSwitch: defineAsyncComponent(() => import('@/components/ui/PrimeToggleSwitch/PrimeToggleSwitch.vue')),
+  Select: defineAsyncComponent(() => import('@/components/ui/Select/Select.vue')),
+  InputText: defineAsyncComponent(() => import('@/components/ui/InputText/InputText.vue')),
+  ToggleSwitch: defineAsyncComponent(() => import('@/components/ui/ToggleSwitch/ToggleSwitch.vue')),
 };
 
 const resizePanel = (panel) => {
@@ -36,7 +36,7 @@ const resizePanel = (panel) => {
 };
 
 const setComponents = (type) => {
-  return type === 'select' ? components.PrimeSelect : type === 'text' ? components.PrimeInputText : type === 'toggle' ? components.PrimeToggleSwitch : null;
+  return type === 'select' ? components.Select : type === 'text' ? components.InputText : type === 'toggle' ? components.ToggleSwitch : null;
 };
 
 const setControls = (controlsState): { controlsState: Controls; headers: Ref<Array<string>> } => {
