@@ -1,7 +1,7 @@
 <script setup lang="ts">
   import controls from './controls';
   import { setDefaultControls } from '@/utils/stories';
-  import PrimeSelect from '@/components/ui/PrimeSelect/PrimeSelect.vue';
+  import Select from '@/components/ui/Select/Select.vue';
 
   const defaultProps = setDefaultControls({
     controls,
@@ -12,7 +12,7 @@
 </script>
 
 <template>
-  <PrimeSelect
+  <Select
     v-bind="defaultProps"
     :options="options"
   />

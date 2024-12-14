@@ -1,7 +1,7 @@
 <script setup lang="ts">
   import controls from './controls';
   import { setDefaultControls } from '@/utils/stories';
-  import PrimeInputText from '@/components/ui/PrimeInputText/PrimeInputText.vue';
+  import InputText from '@/components/ui/InputText/InputText.vue';
 
   const defaultProps = setDefaultControls({
     controls,
@@ -11,5 +11,5 @@
 </script>
 
 <template>
-  <PrimeInputText v-bind="defaultProps" />
+  <InputText v-bind="defaultProps" />
 </template>

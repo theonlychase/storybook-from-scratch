@@ -6,7 +6,13 @@
 // biome-ignore lint: disable
 export {}
 declare global {
+  const Accordion: typeof import('./src/components/index')['Accordion']
+  const AccordionContent: typeof import('./src/components/index')['AccordionContent']
+  const AccordionHeader: typeof import('./src/components/index')['AccordionHeader']
+  const AccordionPanel: typeof import('./src/components/index')['AccordionPanel']
+  const Button: typeof import('./src/components/index')['Button']
   const EffectScope: typeof import('vue')['EffectScope']
+  const InputText: typeof import('./src/components/index')['InputText']
   const Origin: typeof import('./src/components/ui/WcMenu/composables')['Origin']
   const Position: typeof import('./src/components/ui/WcMenu/composables')['Position']
   const PrimeAccordion: typeof import('./src/components/index')['PrimeAccordion']
@@ -22,6 +28,13 @@ declare global {
   const PrimeTabPanels: typeof import('./src/components/index')['PrimeTabPanels']
   const PrimeTabs: typeof import('./src/components/index')['PrimeTabs']
   const PrimeToggleSwitch: typeof import('./src/components/index')['PrimeToggleSwitch']
+  const Select: typeof import('./src/components/index')['Select']
+  const Tab: typeof import('./src/components/index')['Tab']
+  const TabList: typeof import('./src/components/index')['TabList']
+  const TabPanel: typeof import('./src/components/index')['TabPanel']
+  const TabPanels: typeof import('./src/components/index')['TabPanels']
+  const Tabs: typeof import('./src/components/index')['Tabs']
+  const ToggleSwitch: typeof import('./src/components/index')['ToggleSwitch']
   const WcAccordion: typeof import('./src/components/index')['WcAccordion']
   const WcAccordionItem: typeof import('./src/components/index')['WcAccordionItem']
   const WcBreadcrumbs: typeof import('./src/components/index')['WcBreadcrumbs']
