@@ -33,7 +33,7 @@
       </TabPanel>
       <TabPanel value="1">
         <p class="m-0">
-          {{ dummyText }}
+          {{ dummyText.split(' ').reverse().join(' ') }}
         </p>
       </TabPanel>
       <TabPanel value="2">

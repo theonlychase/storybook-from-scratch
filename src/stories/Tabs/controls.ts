@@ -35,6 +35,7 @@ export const defaultControls = {
     name: 'value',
     type: 'text',
     props: {
+      placeholder: '0, 1, or 2',
       value: '0',
     },
     description: 'Value of the active tab.',

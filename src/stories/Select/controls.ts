@@ -3,6 +3,7 @@ export default {
     name: 'defaultValue',
     type: 'text',
     props: {
+      placeholder: 'Set default value...',
       value: undefined,
     },
     description: 'The default value for the input when not controlled by `modelValue`',
@@ -35,6 +36,7 @@ export default {
     name: 'name',
     type: 'text',
     props: {
+      placeholder: 'Set name attribute...',
       value: '',
     },
     description: 'The name attribute for the element, typically used in form submissions.',
@@ -51,7 +53,8 @@ export default {
     name: 'placeholder',
     type: 'text',
     props: {
-      value: 'Placeholder',
+      placeholder: 'Set Placeholder...',
+      value: '',
     },
     description: 'Default text to display when no option is selected.',
   },
@@ -68,7 +71,7 @@ export default {
     type: 'select',
     props: {
       modelValue: undefined,
-      options: ['small', 'large'],
+      options: ['none', 'small', 'large'],
       placeholder: 'Select a size',
     },
     description: 'Select sizes are: <span class="font-bold">small, or large</span>',

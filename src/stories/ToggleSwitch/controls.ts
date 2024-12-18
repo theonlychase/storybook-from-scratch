@@ -3,6 +3,7 @@ export default {
     name: 'defaultValue',
     type: 'text',
     props: {
+      placeholder: 'true or false...',
       value: undefined,
     },
     description: 'The default value for the input when not controlled by `modelValue`',
@@ -27,6 +28,7 @@ export default {
     name: 'name',
     type: 'text',
     props: {
+      placeholder: 'Set name attribute...',
       value: '',
     },
     description: 'The name attribute for the element, typically used in form submissions.',

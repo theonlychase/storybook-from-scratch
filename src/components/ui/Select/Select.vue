@@ -7,7 +7,6 @@
     fluid = false,
     invalid = false,
     loading = false,
-    modelValue,
     name,
     optionLabel,
     optionValue,
@@ -39,7 +38,7 @@
 <template>
   <Select
     v-model="selectedOption"
-    :defaultValue="defaultValue"
+    :default-value="defaultValue"
     :disabled="disabled"
     :fluid="fluid"
     :invalid="invalid"
@@ -49,7 +48,7 @@
     :option-label="optionLabel"
     :option-value="optionValue"
     :placeholder="placeholder"
-    :showClear="showClear"
+    :show-clear="showClear"
     :size="size"
     :variant="variant"
   />

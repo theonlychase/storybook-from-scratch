@@ -12,6 +12,23 @@
   const activeTab = ref('Docs');
   // const { height } = resizePanel(panel);
   const { controlsState, headers }: { controlsState: { [key: string]: any }; headers: Ref<Array<string>> } = setControls(controls);
+
+  watch(
+    () => route.query,
+    (val) => {
+      Object.keys(val).forEach((key) => {
+        const control = controlsState.value[key];
+        if (control) {
+          Object.keys(control.props).forEach((prop) => {
+            if (prop === 'value' || prop === 'modelValue') {
+              control.props[prop] = val[key];
+            }
+          });
+        }
+      });
+    },
+    { deep: true, immediate: true },
+  );
 </script>
 
 <template>
@@ -59,9 +76,9 @@
                 <component
                   :is="setComponents(control.type)"
                   :key="control.name"
-                  v-bind="{ ...control.props }"
-                  @update:value="(val) => updateQuery({ val, name: control.name }, route, router, controlsState)"
-                  @update:model-value="(val) => updateQuery({ val, name: control.name }, route, router, controlsState)"
+                  v-bind="{ ...control.props, size: 'small' }"
+                  @update:value="(val) => updateQuery({ val, name: control.name, propName: 'value' }, route, router, controlsState)"
+                  @update:model-value="(val) => updateQuery({ val, name: control.name, propName: 'modelValue' }, route, router, controlsState)"
                 />
                 <div
                   v-if="!setComponents(control.type)"

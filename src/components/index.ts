@@ -5,6 +5,7 @@ export { default as AccordionPanel } from '@/components/ui/Accordion/AccordionPa
 export { default as AccordionHeader } from '@/components/ui/Accordion/AccordionHeader.vue';
 export { default as AccordionContent } from '@/components/ui/Accordion/AccordionContent.vue';
 export { default as Button } from '@/components/ui/Button/Button.vue';
+export { default as Drawer } from '@/components/ui/Drawer/Drawer.vue';
 export { default as InputText } from '@/components/ui/InputText/InputText.vue';
 export { default as Select } from '@/components/ui/Select/Select.vue';
 export { default as ToggleSwitch } from '@/components/ui/ToggleSwitch/ToggleSwitch.vue';
