@@ -11,9 +11,19 @@ export default {
     name: 'badge',
     type: 'text',
     props: {
+      placeholder: 'Enter a value...',
       value: null,
     },
     description: 'Value of the badge.',
+  },
+  badgeClass: {
+    name: 'badgeClass',
+    type: 'text',
+    props: {
+      placeholder: 'Enter a value...',
+      value: null,
+    },
+    description: 'Style class of the badge.',
   },
   badgeSeverity: {
     name: 'badgeSeverity',
@@ -42,11 +52,33 @@ export default {
   },
   icon: {
     name: 'icon',
-    type: 'text',
+    type: 'select',
     props: {
-      value: null,
+      placeholder: 'Select An Icon',
+      modelValue: undefined,
+      optionLabel: 'label',
+      optionValue: 'name',
+      options: [
+        {
+          label: 'none',
+          name: 'none',
+        },
+        {
+          label: 'object-column',
+          name: 'pi pi-objects-column',
+        },
+      ],
     },
     description: 'Name of the icon',
+  },
+  iconClass: {
+    name: 'iconClass',
+    type: 'text',
+    props: {
+      placeholder: 'Enter a value...',
+      value: null,
+    },
+    description: 'Style class of the icon.',
   },
   iconPos: {
     name: 'iconPos',
@@ -81,6 +113,31 @@ export default {
     },
     description: 'Button loading state',
   },
+  loadingIcon: {
+    name: 'loadingIcon',
+    type: 'select',
+    props: {
+      placeholder: 'Select An Icon',
+      modelValue: undefined,
+      optionLabel: 'label',
+      optionValue: 'name',
+      options: [
+        {
+          label: 'none',
+          name: 'none',
+        },
+        {
+          label: 'spinner-dotted',
+          name: 'pi pi-spin pi-spinner-dotted',
+        },
+        {
+          label: 'spinner',
+          name: 'pi pi-spin pi-spinner',
+        },
+      ],
+    },
+    description: 'Icon to display in loading state.',
+  },
   outlined: {
     name: 'outlined',
     type: 'toggle',
@@ -110,7 +167,7 @@ export default {
     type: 'select',
     props: {
       modelValue: undefined,
-      options: ['small', 'large'],
+      options: ['none', 'small', 'large'],
       placeholder: 'Select a size',
     },
     description: 'Button sizes are <span class="font-bold">small, medium, or large</span>',
@@ -124,6 +181,14 @@ export default {
       placeholder: 'Select a severity',
     },
     description: 'Button variations are: <span class="font-bold">primary, secondary, success, info, warn, help, danger, contrast</span>',
+  },
+  text: {
+    name: 'text',
+    type: 'toggle',
+    props: {
+      modelValue: false,
+    },
+    description: 'Add a textual class to the button without a background initially.',
   },
   variant: {
     name: 'variant',

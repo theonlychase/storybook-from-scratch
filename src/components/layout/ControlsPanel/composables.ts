@@ -64,8 +64,8 @@ const panelHeaders = (disabledState) => {
   return ['Name', 'Description', `Control${disabledState ? 's Disabled' : ''}`];
 };
 
-const updateQuery = ({ val, name }, route, router, controlsState) => {
-  controlsState[`${name}`].props.value = val;
+const updateQuery = ({ val, name, propName }, route, router, controlsState) => {
+  controlsState[`${name}`].props[propName] = val;
 
   router.push({
     name: route.name,

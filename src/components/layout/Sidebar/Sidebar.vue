@@ -13,7 +13,7 @@
 
 <template>
   <div
-    v-show="sidebarOpen"
+    v-if="sidebarOpen"
     class="fixed inset-0 flex z-40 md:hidden"
     role="dialog"
     aria-modal="true"
@@ -57,7 +57,10 @@
           leave-from-class="opacity-100"
           leave-active-class="ease-in-out duration-300"
         >
-          <div class="absolute top-0 right-0 -mr-12 pt-2">
+          <div
+            v-show="sidebarTransition"
+            class="absolute top-0 right-0 -mr-12 pt-2"
+          >
             <button
               type="button"
               class="ml-1 flex items-center justify-center h-10 w-10 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"

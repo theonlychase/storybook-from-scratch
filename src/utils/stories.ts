@@ -21,18 +21,27 @@ const setDefaultControls = ({
     controls[key].props.disabled = disabled;
   });
 
-  controlState.value = { ...controls };
+  controlState.value = structuredClone(controls);
 
-  const defaultProps = {};
+  let defaultProps = {};
 
   Object.entries(controls).forEach(([key, value]: [string, any]): void => {
-    defaultProps[`${key}`] = value.props.value;
+    Object.keys(value.props).forEach((prop) => {
+      if (prop === 'modelValue' || prop === 'value') {
+        defaultProps[`${key}`] = value.props[prop];
+      }
+    });
+
+    if (key === 'placeholder' && value.props.placeholder) {
+      defaultProps[`${key}`] = value.props.placeholder;
+    }
   });
 
   setPageMeta({ title, description });
 
   onBeforeRouteLeave((to, from) => {
     controlState.value = null;
+    defaultProps = {};
   });
 
   return defaultProps;

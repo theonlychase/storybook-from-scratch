@@ -11,6 +11,7 @@ declare global {
   const AccordionHeader: typeof import('./src/components/index')['AccordionHeader']
   const AccordionPanel: typeof import('./src/components/index')['AccordionPanel']
   const Button: typeof import('./src/components/index')['Button']
+  const Drawer: typeof import('./src/components/index')['Drawer']
   const EffectScope: typeof import('vue')['EffectScope']
   const InputText: typeof import('./src/components/index')['InputText']
   const Origin: typeof import('./src/components/ui/WcMenu/composables')['Origin']

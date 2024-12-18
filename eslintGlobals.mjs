@@ -9,6 +9,7 @@ export default {
     "ComponentPublicInstance": true,
     "ComputedRef": true,
     "DirectiveBinding": true,
+    "Drawer": true,
     "EffectScope": true,
     "ExtractDefaultPropTypes": true,
     "ExtractPropTypes": true,

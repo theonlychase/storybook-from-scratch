@@ -27,6 +27,7 @@ export const defaultControls = {
     name: 'value',
     type: 'text',
     props: {
+      placeholder: '0, 1, or 2...',
       value: null,
     },
     description: 'Value of the active panel or an array of values in multiple mode.',
